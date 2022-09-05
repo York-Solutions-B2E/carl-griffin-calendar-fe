@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import {UIService} from "./services/ui.service";
+import {User} from "./User";
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'carl-griffin-calendar-fe';
+  user: User | null = null
+  constructor(private uiService: UIService) {
+    uiService.whenUserChanges().subscribe(user => this.user = user)
+  }
 }

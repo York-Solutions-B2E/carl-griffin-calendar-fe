@@ -1,0 +1,77 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "user1",
+      "password": "pass1"
+    },
+    {
+      "id": 2,
+      "username": "user2",
+      "password": "pass2"
+    },
+    {
+      "username": "user3",
+      "password": "pass3",
+      "id": 3
+    },
+    {
+      "username": "test",
+      "password": "test",
+      "id": 4
+    }
+  ],
+  "events": [
+    {
+      "date": "2022-09-05T10:57:27.171Z",
+      "invitees": [
+        {
+          "userID": 1,
+          "accepted": true
+        }
+      ],
+      "note": "test",
+      "title": "test",
+      "userID": 4,
+      "id": 1
+    },
+    {
+      "date": "2022-09-05T10:57:47.035Z",
+      "invitees": [],
+      "note": "ets",
+      "title": "test",
+      "userID": 4,
+      "id": 2
+    },
+    {
+      "date": "2022-09-10T05:00:00.000Z",
+      "invitees": [
+        {
+          "userID": 1,
+          "accepted": true
+        }
+      ],
+      "note": "lol",
+      "title": "invite",
+      "userID": 4,
+      "id": 3
+    },
+    {
+      "date": "2022-09-05T13:32:01.498Z",
+      "invitees": [
+        {
+          "userID": 2,
+          "accepted": false
+        },
+        {
+          "userID": 3,
+          "accepted": false
+        }
+      ],
+      "note": "test",
+      "title": "test",
+      "userID": 1,
+      "id": 4
+    }
+  ]
+}

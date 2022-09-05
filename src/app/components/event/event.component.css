@@ -1,0 +1,19 @@
+mat-toolbar{
+  background-color: white;
+}
+mat-toolbar:hover {
+  background-color: rgb(246, 208, 64);
+}
+span {
+  font-size: 1rem;
+  padding-left:1rem;
+  padding-right:1rem;
+}
+.spacer {
+  flex: 1 1 auto;
+}
+#invite {
+  padding-left:0rem;
+  padding-right:0rem;
+  color: rgb(100, 59, 177);
+}

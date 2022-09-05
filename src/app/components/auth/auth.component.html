@@ -1,0 +1,44 @@
+<mat-tab-group class="form-container">
+
+  <mat-tab label="Log in">
+    <p *ngIf="error">{{error}}</p>
+    <form class="form" (ngSubmit)="onLogin($event)">
+      <div layout="row">
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Username</mat-label>
+          <input matInput placeholder="Enter username..." name="username" [(ngModel)]="username" />
+        </mat-form-field>
+      </div>
+      <div layout="row">
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Password</mat-label>
+          <input matInput type="password" placeholder="Enter password..." name="password" [(ngModel)]="password"/>
+        </mat-form-field>
+      </div>
+      <div layout="row">
+        <button mat-flat-button color="primary" [disabled]="pending" >Log in</button>
+      </div>
+    </form>
+  </mat-tab>
+
+  <mat-tab label="Register">
+    <form class="form" (ngSubmit)="onSignup($event)">
+      <div layout="row">
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Username</mat-label>
+          <input matInput placeholder="Enter username..." name="username" [(ngModel)]="username"/>
+        </mat-form-field>
+      </div>
+      <div layout="row">
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Password</mat-label>
+          <input matInput type="password" placeholder="Enter password..." name="password" [(ngModel)]="password"/>
+        </mat-form-field>
+      </div>
+      <div layout="row">
+        <button mat-flat-button color="primary" [disabled]="pending">Register</button>
+      </div>
+    </form>
+  </mat-tab>
+
+</mat-tab-group>

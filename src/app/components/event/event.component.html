@@ -1,0 +1,15 @@
+<mat-toolbar>
+  <span (click)="onClicked()">{{event.date | date:'shortDate'}}</span>
+  <span (click)="onClicked()"><span id="invite" *ngIf="event.userID !== uiService.user?.id" color="primary">(Invited) </span>{{event.title}}</span>
+  <span (click)="onClicked()" class="spacer"></span>
+  <button *ngIf="calendar && event.userID=== uiService.user?.id" mat-button color="primary" (click)="onEditClicked()" >
+    <mat-icon>edit</mat-icon>
+  </button>
+  <button *ngIf="!calendar" mat-button color="primary" (click)="onAcceptInvite()" >
+    <mat-icon>check</mat-icon>
+  </button>
+  <button mat-button color="warn" (click)="onDeleteClicked()">
+    <mat-icon>delete</mat-icon>
+  </button>
+</mat-toolbar>
+<mat-divider></mat-divider>

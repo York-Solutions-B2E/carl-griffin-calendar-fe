@@ -1,0 +1,35 @@
+<app-header></app-header>
+
+<mat-grid-list cols="2" rowHeight="1:1">
+
+  <mat-grid-tile>
+    <div class="calendar">
+      <mat-calendar (selectedChange)="onDatesChange($event)" [selected]="selectedDates"></mat-calendar>
+      <button mat-button color="primary" (click)="onReset()">Reset</button>
+    </div>
+  </mat-grid-tile>
+  <mat-grid-tile>
+    <div class="list">
+      <mat-toolbar>
+        <button mat-button color="primary" (click)="onAddBtnClick()">
+          <mat-icon>add</mat-icon>
+        </button>
+        <button mat-button color="primary" [disabled]="calendar" (click)="onSwitch()">
+          <mat-icon >calendar_today</mat-icon>
+        </button>
+        <button mat-button color="primary" [disabled]="!calendar">
+          <mat-icon [matBadge]="invites.length" matBadgeColor="accent" (click)="onSwitch()">notifications</mat-icon>
+        </button>
+      </mat-toolbar>
+      <p *ngIf="events.length === 0 && calendar">No events yet</p>
+      <p *ngIf="invites.length === 0 && !calendar">No events yet</p>
+      <div *ngIf="calendar">
+        <app-event *ngFor="let event of events" [event]="event" [calendar]="calendar"></app-event>
+      </div>
+      <div *ngIf="!calendar">
+        <app-event *ngFor="let event of invites" [event]="event" [calendar]="calendar"></app-event>
+      </div>
+    </div>
+  </mat-grid-tile>
+</mat-grid-list>
+
